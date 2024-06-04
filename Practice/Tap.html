@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
 <style>
+
+#cover {
+  width:50px;
+  height:100px;
+  position:absolute;
+  left:350px;
+  background-color:white;
+} 
 #container {
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 100px;
   position: relative;
-  background: yellow;
+  background: Black;
 }
 #judgeline {
   width:5px;
-  height:400px;
+  height:100px;
   position:absolute;
-  background-color:black;
+  background-color:white;
   left:280px;
 }
 </style>
@@ -20,11 +28,10 @@
 <p><button onclick="SpawnNote()">Spawn</button></p> 
 <p><button onclick="JudgeTap()">Tap</button></p>
 
+
 <div id ="container">
   <div id ="judgeline"></div>
-</div>
-<div id="texts">
-  <p id = "noteposition"> </p>
+  <div id="cover"></div>
 </div>
 
 <script>
@@ -34,31 +41,28 @@ var noteID = 0;
 function SpawnNote() {
 
 // create new note element
+const note = document.createElement("img");
+note.id = "note";
+note.style.width = "50px";
+note.style.height= "50px";
+note.style.position= "absolute";
+note.style.top= "25px";
+note.src="tap.png";
 
-const elem = document.createElement("div");
-elem.id = "note";
-elem.style.width = "5px";
-elem.style.height= "50px";
-elem.style.position= "absolute";
-elem.style.backgroundColor = "red";
-elem.style.top= "175px";
-noteID=(noteID+1)%20;
-document.getElementById("container").appendChild(elem);
+var containernode = document.getElementById("container");
+var covernode = document.getElementById("cover");
+container.insertBefore(note,covernode);
 
 // animate
-
-  let id = null;
   let pos = 0;
-  clearInterval(id);
-  id = setInterval(frame, 5);
+  let intvID = setInterval(frame, 5);
+  note.setAttribute("intervalID",intvID);
   function frame() {
-    if (pos >= 400) {
-    document.getElementById("noteposition").innerHTML = "";
-    clearInterval(id);
-    elem.remove()
-    } else {
+    if (pos >= 350) {
+      JudgeTap();
+    } else{
     pos++; 
-    elem.style.left = pos + "px"; 
+    note.style.left = pos + "px"; 
     }
   }
 }
@@ -66,20 +70,52 @@ document.getElementById("container").appendChild(elem);
 function JudgeTap() {
 	const elem = document.getElementById("note");   
 	var pos = elem.style.left;
-    
-    if(Math.abs(parseInt(pos)-280)<10){
-    document.getElementById("noteposition").innerHTML = "perfect";
+    if(pos >= 350){
+      JudgementFlash("miss");
     }
-    else if(Math.abs(parseInt(pos)-280)<50){
-    document.getElementById("noteposition").innerHTML = "great";
+    else if(Math.abs(parseInt(pos)-255)<20){
+      JudgementFlash("perfect");
     }
-    else if(Math.abs(parseInt(pos)-280)<100){
-    document.getElementById("noteposition").innerHTML = "good";
+    else if(Math.abs(parseInt(pos)-255)<100){
+      JudgementFlash("great");
+    }
+    else if(Math.abs(parseInt(pos)-255)<300){
+      JudgementFlash("good");
     }
     else{
-    document.getElementById("noteposition").innerHTML = "miss";
+      JudgementFlash("miss");
     }
-    elem.remove()
+    let id = elem.getAttribute("intervalID");
+    clearInterval(id);
+    elem.remove();
+}
+
+function JudgementFlash(Judge){
+
+  const Sprite = document.createElement("div");
+  Sprite.innerHTML = Judge;
+  Sprite.style.position= "absolute";
+  Sprite.style.top= "25px";
+
+  switch(Judge){
+    case "perfect":
+      Sprite.style.color="yellow";
+      break;
+    case "great":
+      Sprite.style.color="pink";
+      break;
+    case "good":
+      Sprite.style.color="green";
+      break;
+    case "miss":
+    default:
+      Sprite.style.color="gray";
+      break;
+  }
+
+  document.getElementById("container").appendChild(Sprite);
+  setTimeout(function(){Sprite.remove()},200);
+  return;
 }
 </script>
 
