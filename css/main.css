@@ -12,7 +12,7 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 10%;
+  width: 200px;
   background-color: #e9e9e9;
   position: fixed;
   height: 100%;
@@ -21,6 +21,12 @@ body {
 
 #how-to-play-menu {
   display: none;
+}
+
+#content {
+  margin-left:220px;
+  padding:1px 30px;
+  height:1000px;
 }
 
 a {
