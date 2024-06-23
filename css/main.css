@@ -9,7 +9,7 @@ body {
 }
 
 #main_menu {
-  list-style-type: none;
+  display: list-item;
   margin: 0;
   padding: 0;
   width: 200px;
@@ -17,10 +17,6 @@ body {
   position: fixed;
   height: 100%;
   overflow: hidden;
-}
-
-.dropdown-btn {
-  display: inline;
 }
 
 #how-to-play-menu {
@@ -33,19 +29,20 @@ body {
   height:1000px;
 }
 
-li {
-  display: block;
+#main_menu li a {
+  display: inline-block;
+  width: 100%;
   color: #000;
   padding: 8px 16px;
   text-decoration: none;
 }
 
-li a.active {
+#main_menu li.active {
   background-color: #04AA6D;
   color: white;
 }
 
-li a:hover:not(.active) {
+#main_menu li:hover:not(.active) {
   background-color: #555;
   color: white;
 }
