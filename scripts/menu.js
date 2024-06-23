@@ -6,7 +6,7 @@ var currentpage = parts.pop(parts);
 const menu = [
     ["maimaiGuide_main.html", "Home"],
     ["maimaiGuide_BeforeYouStart.html", "Before You Start"],
-
+    ["maimaiGuide_HowToPlay.html", "How To Play"],
     ["maimaiGuide_GameModes.html", "Game Modes"],
     ["maimaiGuide_CabLocations.html", "Cab Locations"],
     ["maimaiGuide_AboutAuthors.html", "About Authors"],
@@ -22,22 +22,23 @@ const submenu = [
 function expand(e)
 {
     var dropdownContent = e.nextElementSibling;
+    console.log(dropdownContent);
     if (dropdownContent.style.display === "block")
         dropdownContent.style.display = "none";
     else
         dropdownContent.style.display = "block";
 }
 
-var html = "";
+var html = "<ul>";
 for (let i = 0; i < 2; i ++)
 {
     if (menu[i][0] == currentpage)
-        html += '<a class="active">'+menu[i][1]+'</a>';
+        html += '<li><a class="active">'+menu[i][1]+'</a><li>';
     else
-        html += '<a href="'+menu[i][0]+'">'+menu[i][1]+'</a>';
+        html += '<li><a href="'+menu[i][0]+'">'+menu[i][1]+'</a></li>';
 }
 /* Drop down submenu render */
-html += '<a class="dropdown-btn" onclick="expand(this)">How To Play</a>';
+html += '<li><a href="maimaiGuide_HowToPlay.html">How To Play</a><button class="dropdown-btn" onclick="expand(this)">down</button>';
 html += '<div id="how-to-play-menu">';
 for (let i = 0; i < submenu.length; i ++)
 {
@@ -48,14 +49,14 @@ for (let i = 0; i < submenu.length; i ++)
     else
         html += '<a href="'+submenu[i][0]+'">'+submenu[i][1]+'</a>';
 }
-html += '</div>'
+html += '</div></li>'
 /* Continue rendering the main menu */
-for (let i = 2; i < menu.length; i ++)
+for (let i = 3; i < menu.length; i ++)
 {
     if (menu[i][0] == currentpage)
-        html += '<a class="active">'+menu[i][1]+'</a>';
+        html += '<li><a class="active">'+menu[i][1]+'</a></li>';
     else
-        html += '<a href="'+menu[i][0]+'">'+menu[i][1]+'</a>';
+        html += '<li><a href="'+menu[i][0]+'">'+menu[i][1]+'</a></li>';
 }
 
 document.getElementById('main_menu').innerHTML = html;
