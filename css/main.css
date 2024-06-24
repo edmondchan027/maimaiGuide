@@ -8,15 +8,8 @@ body {
   text-align: center;
 }
 
-#main_menu {
-  display: list-item;
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #e9e9e9;
-  position: fixed;
-  height: 100%;
-  overflow: hidden;
+.dropdown-btn {
+  border: none;
 }
 
 #how-to-play-menu {
@@ -29,6 +22,16 @@ body {
   height:1000px;
 }
 
+#main_menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #e9e9e9;
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+}
 #main_menu li a {
   display: inline-block;
   width: 100%;
