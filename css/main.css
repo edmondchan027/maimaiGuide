@@ -49,3 +49,7 @@ body {
   background-color: #555;
   color: white;
 }
+
+#main_menu .dropdown-div {
+  margin-left: 5%;
+}
