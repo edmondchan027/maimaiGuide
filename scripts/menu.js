@@ -48,9 +48,9 @@ html += renderMenu(0, 1, menu);
 /* Drop down submenu render */
 html += '<li><a style="width:70%" href="maimaiGuide_HowToPlay.html">How To Play</a><button class="dropdown-btn" onclick="expand(this)">v</button></li>';
 html += '<div id="how-to-play-menu">';
-html += renderMenu(0, submenu.length, submenu);
+html += renderMenu(0, submenu.length - 1, submenu);
 html += '</div>'
 /* Continue rendering the main menu */
-html += renderMenu(2, menu.length, menu);
+html += renderMenu(2, menu.length - 1, menu);
 
 document.getElementById('main_menu').innerHTML = html;
