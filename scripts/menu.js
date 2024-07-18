@@ -4,46 +4,34 @@ var currentpage = parts.pop(parts);
 
 /* CHANGE HERE IF YOU WANT TO EDIT THE MENU */
 
-/* Main menu list*/
+/* Main menu list */
 // [Html file , Display text]
 // or, if there will be submenu
 // [Html file , Displaytext , [submenulist]]
 // Sub menu follows the excact format
 
 const menu = [
-    //Home tab
     ["Home.html", "Home"],
-    //Before you play tab
     ["BeforeYouPlay.html", "Before You Play"],
-    //Beginner tab
     ["Beginner.html", "Beginners",
         [
-            //Beginner Submenu tab
             ["Beg-Options.html","Recommended options"],
             ["Beg-Optons2.html","2"]
         ]
     ],
-    //Intermediate tab
     ["Intermediate.html", "Intermediate",
         [
-            //Intermediate Submenu tab
             ["Int-Options.html","Recommended options"]
         ]
     ],
-    //Advanced tab
     ["Advanced.html", "Advanced",
         [
-            //Beginner Submenu tab
             ["Adv-Options.html","Recommended options"]
         ]
     ],
-    //Etiquettes tab
     ["Etiquettes.html","Arcade Etiquettes"],
-    //AboutAuthors tab
     ["AboutAuthors.html","About Authors"],
-    //OfficialLinks tab
     ["OfficialLinks.html","Official links"],
-    //Contacts tab
     ["Contacts.html","Contacts"]
 ];
 
@@ -97,13 +85,33 @@ function renderMenu(menulength, menulist)
     return html;
 }
 
+function togglemenu() {
+    var menuwidth = getComputedStyle(document.querySelector("#main_menu")).width;
+    console.log(menuwidth);
+    if (menuwidth == '220px') {
+        document.getElementById("main_menu").style.width = "0px";
+        document.getElementById("content").style.marginLeft = '20px';
+    }
+    else {
+        document.getElementById("main_menu").style.width = "220px";
+        document.getElementById("content").style.marginLeft = '220px';
+    }
+}
+
 /* Rendering */
 
-document.getElementById('main_menu').innerHTML = renderMenu(menu.length,menu);
+var content = ""
+content += '<li><button class="menu-btn" onclick="togglemenu()">show</button></li>';
+content += renderMenu(menu.length,menu);
+document.getElementById('main_menu').innerHTML = content;
+
+// if the active page is within a submenu, or if there is a submenu within the active page, show submenu
 var current = document.getElementById('main_menu').getElementsByClassName('active');
 if(current[0].parentElement.className == 'submenu'){
     current[0].parentElement.style.display = 'inline-block';
+    current[0].parentElement.previousElementSibling.textContent = "^";
 }
 else if (current[0].querySelector('.submenu')){
     current[0].querySelector('.submenu').style.display = 'inline-block';
+    current[0].querySelector('.dropdown-btn').textContent = "^";
 }

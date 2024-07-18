@@ -28,7 +28,7 @@
     text-decoration: none;
 }
 
-#main_menu li.active a, #main_menu .submenu li.active a:hover {
+#main_menu li.active > a, #main_menu .submenu li.active a:hover {
     background-color: #04AA6D;
     color: #000;
 }
