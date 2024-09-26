@@ -35,7 +35,7 @@
   font-size: 26px;
 }
 .sidebar .nav-links{
-  height: 80%;
+  height:100%;
   padding-top: 30px;
   overflow: auto;
 }
@@ -50,7 +50,6 @@
 }
 
 .sidebar .nav-links li:hover{
-  padding: 5px;
   background-image: linear-gradient(to left,rgb(38, 151, 226),rgb(74, 180, 250));
   transition: 0.4s ease;
 }
@@ -79,7 +78,7 @@
   text-decoration: none;
 }
 
-.sidebar .nav-links li a .linkname{
+.sidebar .nav-links li .linkname{
   font-size: 18px;
   font-weight: 400;
   color: black;
@@ -102,7 +101,7 @@
 }
 
 .sidebar .nav-links li .sub-menu li:hover{
-  outline: 1px solid rgb(255, 255, 255);
+  background-image: linear-gradient(to left,rgba(255, 255, 255, 0.1),rgba(74, 180, 250, 0));
   transition: all 0s ease;
 }
 
