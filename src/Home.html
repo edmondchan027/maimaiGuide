@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <!-- Side bar -->
 <div class="sidebar">
   <div class="logo-details">
     <i class='bx bxs-washer'></i>
@@ -16,106 +17,175 @@
   </div>
   <ul class="nav-links">
     <li>
-      <a href="#">
+      <a href="#" onclick="return showpage('Home')">
         <i class='bx bx-home' ></i>
         <span class="linkname">Home</span>
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="#" onclick="return showpage('BeforeYouPlay')">
         <i class='bx bxs-hand-up' ></i>
         <span class="linkname">Before You Play</span>
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="#" onclick="return showpage('GettingStarted')">
         <i class='bx bxs-navigation' ></i>
         <span class="linkname">Getting Started</span>
       </a>
     </li>
     <li>
       <div class="icon-link">
-        <a href="#">
+        <a href="#" onclick="return showpage('Beg-Main')">
           <i class='bx bx-happy-alt' ></i>
           <span class="linkname">Beginner</span>
         </a>
         <i class='bx bx-chevron-down arrow' ></i>
       </div>
       <ul class="sub-menu">
-        <li><a href="#">Introduction</a></li>
-        <li><a href="#">Option Settings</a></li>
-        <li><a href="#">More about notes</a></li>
-        <li><a href="#">Scoring</a></li>
-        <li><a href="#">Difficulties</a></li>
-        <li><a href="#">STD and DX Charts</a></li>
-        <li><a href="#">Rating, Class, Rank</a></li>
+        <li><a href="#" onclick="return showpage('Beg-Intro')">Introduction</a></li>
+        <li><a href="#" onclick="return showpage('Beg-Option')">Option Settings</a></li>
+        <li><a href="#" onclick="return showpage('Beg-MoreAbtNotes')">More about notes</a></li>
+        <li><a href="#" onclick="return showpage('Beg-Scoring')">Scoring</a></li>
+        <li><a href="#" onclick="return showpage('Beg-Difficulties')">Difficulties</a></li>
+        <li><a href="#" onclick="return showpage('Beg-STDandDX')">STD and DX Charts</a></li>
+        <li><a href="#" onclick="return showpage('Beg-RatingClassRank')">Rating, Class, Rank</a></li>
       </ul>
     </li>
     <li>
       <div class="icon-link">
-        <a href="#">
+        <a href="#" onclick="return showpage()">
           <i class='bx bx-smile' ></i>
           <span class="linkname">Advanced</span>
         </a>
         <i class='bx bx-chevron-down arrow' ></i>
     </div>
     <ul class="sub-menu">
-      <li><a href="#">Introduction</a></li>
-      <li><a href="#">Option Settings</a></li>
-      <li><a href="#">More about notes</a></li>
-      <li><a href="#">Scoring</a></li>
-      <li><a href="#">Difficulties</a></li>
-      <li><a href="#">STD and DX Charts</a></li>
-      <li><a href="#">Rating, Class, Rank</a></li>
+      <li><a href="#" onclick="return showpage()">Setting Goals</a></li>
+      <li><a href="#" onclick="return showpage()">Button or Screen?</a></li>
+      <li><a href="#" onclick="return showpage()">Hand Gesture and Sightline</a></li>
+      <li><a href="#" onclick="return showpage()">More About Slides</a></li>
+      <li><a href="#" onclick="return showpage()">Sightread</a></li>
+      <li><a href="#" onclick="return showpage()">Grinding</a></li>
+      <li><a href="#" onclick="return showpage()">Learning Patterns</a></li>
+      <li><a href="#" onclick="return showpage()">Song Picks</a></li>
     </ul>
     </li>
     <li>
       <div class="icon-link">
-        <a href="#">
+        <a href="#" onclick="return showpage()">
           <i class='bx bx-angry' ></i>
           <span class="linkname">Expert</span>
         </a>
         <i class='bx bx-chevron-down arrow' ></i>
       </div>
       <ul class="sub-menu">
-        <li><a href="#">Introduction</a></li>
-        <li><a href="#">Option Settings</a></li>
-        <li><a href="#">More about notes</a></li>
-        <li><a href="#">Scoring</a></li>
-        <li><a href="#">Difficulties</a></li>
-        <li><a href="#">STD and DX Charts</a></li>
-        <li><a href="#">Rating, Class, Rank</a></li>
+        <li><a href="#" onclick="return showpage()">Option Settings Ex</a></li>
+        <li><a href="#" onclick="return showpage()">Setting Goals Ex</a></li>
+        <li><a href="#" onclick="return showpage()">Learning From Your Plays</a></li>
+        <li><a href="#" onclick="return showpage()">Optimising Gestures</a></li>
+        <li><a href="#" onclick="return showpage()">Challenges</a></li>
       </ul>
+    </li>
+    <li>
+      <a href="#" onclick="return showpage()">
+        <i class='bx bx-check-shield'></i>
+        <span class="linkname">Arcade Etiquette</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" onclick="return showpage()">
+        <i class='bx bxs-user-account' ></i>
+        <span class="linkname">About Authors</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" onclick="return showpage()">
+        <i class='bx bx-link' ></i>
+        <span class="linkname">Useful Links</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" onclick="return showpage()">
+        <i class='bx bx-message-rounded-detail' ></i>
+        <span class="linkname">Contacts</span>
+      </a>
     </li>
   </ul>
 </div>
 
+<!-- Main Content -->
 <div class="content">
-  <h1>Welcome to MaiGuide </h1>
-  <p>Welcome to <span style="font-weight: 800;">MaiGuide</span>, a guide designed as a point of reference for people to start their journey into playing Maimai.</p>
-  <p>This page aims to provide a full English guide on how to play Maimai, as most of the resources online are written in Japanese. We want to create a better community, so we hope that this guide starts beginners in the right direction for learning and improvement.</p>
-  <p>Please feel free to share this website for anyone who is looking to start playing, or for people who are looking to improve.</p> 
-  <p>For experienced players, we also have tips and advice to help players of any skill level to improve. Check out the intermediate or advanced tab!</p>
-  <p>This guide is written for players playing the official Maimai Deluxe International Version. We will not provide any support for modded or private cabinets.</p>
-  <p>Please continue by clicking the tabs in the navigation bar on the left of the webpage. Feel free to message the authors for any suggestions.</p>
+  <div class="show" id="Home">
+    <h1>Welcome to MaiGuide </h1>
+    <p>Welcome to <span style="font-weight: 800;">MaiGuide</span>, a guide designed as a point of reference for people to start their journey into playing Maimai.</p>
+    <p>This page aims to provide a full English guide on how to play Maimai, as most of the resources online are written in Japanese. We want to create a better community, so we hope that this guide starts beginners in the right direction for learning and improvement.</p>
+    <p>Please feel free to share this website for anyone who is looking to start playing, or for people who are looking to improve.</p> 
+    <p>For experienced players, we also have tips and advice to help players of any skill level to improve. Check out the intermediate or advanced tab!</p>
+    <p>This guide is written for players playing the official Maimai Deluxe International Version. We will not provide any support for modded or private cabinets.</p>
+    <p>Please continue by clicking the tabs in the navigation bar on the left of the webpage. Feel free to message the authors for any suggestions.</p>
 
-    <p>-CHANGE LOG
-    <br>(Date) -- MaiGuide Debut!
-    <br>(Date) -- MaiGuide Debut!
-    <br>(Date) -- MaiGuide Debut!
-    <br>(Date) -- MaiGuide Debut!
-    <br>(Date) -- MaiGuide Debut!
-    <br>(Date) -- MaiGuide Debut!
-    <br>(Date) -- MaiGuide Debut!
-    <br>(Date) -- MaiGuide Debut!
-    <br>(Date) -- MaiGuide Debut!
-    <br>(Date) -- MaiGuide Debut!
-    <br>(Date) -- MaiGuide Debut!
-    <br>(Date) -- MaiGuide Debut!
-    </p> 
+      <p>-CHANGE LOG
+      <br>(Date) -- MaiGuide Debut!
+      <br>(Date) -- MaiGuide Debut!
+      <br>(Date) -- MaiGuide Debut!
+      <br>(Date) -- MaiGuide Debut!
+      <br>(Date) -- MaiGuide Debut!
+      <br>(Date) -- MaiGuide Debut!
+      <br>(Date) -- MaiGuide Debut!
+      <br>(Date) -- MaiGuide Debut!
+      <br>(Date) -- MaiGuide Debut!
+      <br>(Date) -- MaiGuide Debut!
+      <br>(Date) -- MaiGuide Debut!
+      <br>(Date) -- MaiGuide Debut!
+      </p> 
+  </div>
+  <div class="hide" id="BeforeYouPlay">
+    <h1>Before You Play </h1>
+
+  </div>
+  <div class="hide" id="GettingStarted">
+    <h1>Getting Started</h1>
+
+  </div>
+  <div class="hide" id="Beg-Main">
+    <h1>Beginners</h1>
+
+  </div>
+  <div class="hide" id="Beg-Intro">
+    <h1>Introduction for beginners </h1>
+    
+  </div>
+  <div class="hide" id="Beg-Option">
+    <h1>Recommended options for beginners </h1>
+    
+  </div>
+  <div class="hide" id="Beg-MoreAbtNotes">
+    <h1>More about notes </h1>
+    
+  </div>
+  <div class="hide" id="Beg-Scoring">
+    <h1>Scoring </h1>
+    
+  </div>
+  <div class="hide" id="Beg-Difficulties">
+    <h1>Difficulties </h1>
+    
+  </div>
+  <div class="hide" id="Beg-STDandDX">
+    <h1>Standard(STD) and Deluxe(DX) charts</h1>
+    
+  </div>
+  <div class="hide" id="Beg-RatingClassRank">
+    <h1>Rating, Class, and Ranks </h1>
+    
+  </div>
 
 </div>
 
+
+
+<!-- JS -->
   <script>
     let arrow =  document.querySelectorAll(".arrow");
     for (var i=0; i<arrow.length; i++){
@@ -123,6 +193,13 @@
         let arrowParent = e.target.parentElement.parentElement;
         arrowParent.classList.toggle("showlist")
       });
+    }
+
+    function showpage(pagename){
+      let activepage = document.getElementsByClassName("show");
+      let targetpage = document.getElementById(pagename);
+      activepage[0].classList.replace("show","hide");
+      targetpage.classList.replace("hide","show");
     }
 
   </script>
